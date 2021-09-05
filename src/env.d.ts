@@ -6,3 +6,7 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+declare module '*.yaml' {
+  const json: Record<string, string>;
+  export default json;
+}
