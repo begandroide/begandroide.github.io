@@ -17,48 +17,117 @@ defineProps<{ msg: string }>()
 <!-- <h1 class="mt-4">{{ msg }}</h1> -->
 <!-- <p>See <code>README.md</code> for more information.</p> -->
 <template>
-<div class="flex-auto dark:bg-gray-900">
-  <div class="flex flex-col items-center gap-2">
-    <img id="bg-logo" alt="bg logo" v-bind:src="isDark ? darkLogo : lightLogo">
-    <span class="text-black text-4xl" dark="text-white">Benjamín Gautier</span>
-    <span class="text-gray-800 text-md" dark="text-white">@begandroide</span>
-    <!-- <button type="button" @click="count++">count is: {{ count }}</button> -->
-  </div>
+  <div class="flex-auto dark:bg-gray-900">
+    <div class="flex flex-col items-center gap-2">
+      <img id="bg-logo" alt="bg logo" v-bind:src="isDark ? darkLogo : lightLogo">
+      <span class="text-black text-4xl dark:text-white">Benjamín Gautier</span>
+      <span class="text-gray-800 text-md dark:text-white">@begandroide</span>
+      <!-- <button type="button" @click="count++">count is: {{ count }}</button> -->
+    </div>
 
-  <div class="bg-gray-800 flex-grow m-12 rounded-xl p-4 dark:bg-gray-800">
-    <transition name="bounce">|</transition>
-    <p>
-      {{ t('AboutMeText') }}
-    </p>
-  </div>
+    <div class="
+      dark:bg-gray-800
+      dark:text-white
+      bg-gray-300
+      flex-col
+      items-stretch
+      flex-grow
+      m-12 xl:mx-80
+      p-4
+      rounded-xl
+      text-gray-800
+      min-h-30
+      overflow-scroll">
+      <!-- <span class="opacity-toggle dark:text-white text-gray-800">|</span> -->
+      <!-- <p>
+        {{ t('AboutMeText') }}
+      </p> -->
+      <div class="flex w-full flex-row items-start">
+        <div class=" border-dark-700 dark:border-white  typewriter line-1 text-left">
+          <h1>> cd /opt/begandroide</h1>
+        </div>
+      </div>
+      <div class="flex w-full flex-row items-start">
+        <div class="border-dark-700 dark:border-white typewriter line-2 text-left">
+          <h1>> echo .hello</h1>
+        </div>
+      </div>
+      <div class="flex w-full flex-row items-start">
+        <div class="border-dark-700 dark:border-white typewriter line-3 text-left">
+          <h1>Chilean Software Engineer 🇨🇱</h1>
+        </div>
+      </div>
+    </div>
 
-  <!-- <div class="bg-gray-200 flex-grow m-12 rounded-32px p-4 min-h-md dark:bg-gray-200">
-    <span class="text-sm text-gray-800">{{ t('AboutMe') }}</span>
-    <p>
-      {{ t('AboutMeText') }}
-    </p>
-  </div> -->
-</div>
+  </div>
 </template>
 
 <style scoped>
-.bounce-enter-active {
-  animation: bounce-in .5s;
+
+.line-1 h1 {
+  height: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 600;
+  margin-right: .25em;
+  letter-spacing: .135em;
+  animation:
+    typing 2.5s 1s steps(70, end),
+    height-max .75s 1s step-end infinite,
+    show-caret .75s 1s step-end infinite,
+    blink-caret .75s 1s step-end infinite,
+    pause-caret .75s 5s step-end infinite;
 }
-.bounce-leave-active {
-  animation: bounce-in .5s reverse;
+
+.line-2 h1 {
+  height: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 600;
+  margin-right: .25em;
+  letter-spacing: .135em;
+  animation:
+    typing 2s 6s steps(50, end),
+    height-max .75s 6s step-end infinite,
+    show-caret .75s 6s step-end infinite,
+    blink-caret .75s 6s step-end infinite,
+    pause-caret .75s 9s step-end infinite;
 }
-@keyframes bounce-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
+.line-3 h1 {
+  height: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 600;
+  margin-right: .25em;
+  letter-spacing: .135em;
+  animation:
+    typing 2.5s 9s steps(90, end),
+    height-max .75s 9s step-end infinite,
+    show-caret .75s 9s step-end infinite,
+    blink-caret .75s 9s step-end infinite;
 }
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent}
+  50% { border-color: inherit }
+}
+
+@keyframes pause-caret {
+  from, to { border-color: transparent}
+}
+
+@keyframes show-caret {
+  from, to {  border-right: .15em solid;}
+}
+@keyframes height-max {
+  from, to { height: 100%; }
+}
+
 a {
   color: #42b983;
 }
@@ -66,13 +135,6 @@ a {
 label {
   margin: 0 0.5em;
   font-weight: bold;
-}
-
-code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
 }
 
 #bg-logo {
