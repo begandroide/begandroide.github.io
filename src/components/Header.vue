@@ -22,7 +22,9 @@ const toggleLocales = () => {
 
 <template>
 <div class="min-h-content border-b-1 border-b-gray-300 flex flex-row justify-between items-center dark:bg-gray-900" >
-    <img id="bg-mini-logo" alt="bg mini logo" v-bind:src="isDark ? darkLogo : lightLogo">
+    <router-link to="/">
+        <img id="bg-mini-logo" alt="bg mini logo" v-bind:src="isDark ? darkLogo : lightLogo">
+    </router-link>
   
     <div class="flex flex-row justify-center items-center gap-2 p-1 pr-4">
         <a href="https://www.linkedin.com/in/benjamingautierortiz">
