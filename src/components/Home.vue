@@ -4,8 +4,8 @@ import { isDark } from '../logic/dark'
 import darkLogo from '../assets/bg_dark.svg'
 import lightLogo from '../assets/bg_light.svg'
 
-import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
+// import { useI18n } from 'vue-i18n'
+// const { t } = useI18n()
 
 defineProps<{ msg: string }>()
 
@@ -24,7 +24,6 @@ defineProps<{ msg: string }>()
       <span class="text-gray-800 text-md dark:text-white">@begandroide</span>
       <!-- <button type="button" @click="count++">count is: {{ count }}</button> -->
     </div>
-
     <div class="
       dark:bg-gray-800
       dark:text-white
@@ -32,11 +31,12 @@ defineProps<{ msg: string }>()
       flex-col
       items-stretch
       flex-grow
-      m-12 xl:mx-80
+      m-12 xl:mx-80 text-xs lg:text-lg
       p-4
       rounded-xl
       text-gray-800
       min-h-30
+      font-mono
       overflow-scroll">
       <!-- <span class="opacity-toggle dark:text-white text-gray-800">|</span> -->
       <!-- <p>
@@ -58,6 +58,20 @@ defineProps<{ msg: string }>()
         </div>
       </div>
     </div>
+
+    <div class="px-2 flex flex-row justify-center items-center">
+      <span class="px-2 text-white"> | </span>
+      <router-link to="/markdown">Markdown</router-link>
+      <span class="px-2 text-white"> | </span>
+      <router-link to="/maths">Maths</router-link>
+      <span class="px-2 text-white"> | </span>
+    </div>
+
+    
+    <hr/>
+    
+    
+
 
   </div>
 </template>
